@@ -1,0 +1,31 @@
+.currentInfo{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.playerBar{
+  width: 100%;
+  height: 20px;
+  max-width: 800px;
+  margin: 0px auto;
+  cursor: pointer;
+}
+
+.playerBar > div {
+  height: 100%;
+  background: #d8d8d8;
+  position: relative;
+  width: 100%;
+}
+
+.playerBar > div > div {
+  height: 100%;
+  background: #66fcff;
+  position: absolute;
+  left: 0px;
+}
+
+.info {
+  text-align: center;
+  margin-top: 20px;
+}

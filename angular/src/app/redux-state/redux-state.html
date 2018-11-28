@@ -1,0 +1,6 @@
+
+<div>
+  <a *ngIf="!showState" (click)="toggleState()">(Show debug)</a>
+  <a *ngIf="showState" (click)="toggleState()">(Hide debug)</a>
+  <pre *ngIf="showState">{{stateString}}</pre>
+</div>
