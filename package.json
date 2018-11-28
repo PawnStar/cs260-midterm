@@ -1,0 +1,18 @@
+{
+  "name": "cs260-midterm",
+  "version": "0.0.1",
+  "description": "Express site with Angular and Mongo",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.4",
+    "express-promise-router": "^3.0.3",
+    "mongoose": "^5.3.12"
+  }
+}
