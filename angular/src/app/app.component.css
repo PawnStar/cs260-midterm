@@ -1,3 +1,14 @@
 h1{
   margin: 30px;
 }
+
+nav {
+  width: 100%;
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+}

@@ -1,8 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import * as Redux from 'redux';
+import { Component } from '@angular/core';
 
-import { AppStore } from 'redux/store';
-import { AppState } from '../redux/reducer';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +7,7 @@ import { AppState } from '../redux/reducer';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(@Inject(AppStore) private store: Redux.Store<AppState>) {
+  constructor() {
 
   }
 }

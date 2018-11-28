@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "build": "ng build angular"
+    "build": "ng build angular",
+    "dev": "ng serve --proxy-config proxy.conf.json"
   },
   "author": "",
   "license": "ISC",
