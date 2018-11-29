@@ -49,7 +49,7 @@ app.use(async (req, _, next)=>{
 app.use('/api', require('./api'))
 app.use('/api/user', require('./api/user'))
 app.use('/api/items', require('./api/items'))
-app.use(express.static('public'))
+app.use(express.static('build'))
 
 // Error handler
 const err = (message, status)=>{let err = new Error(message); err.status = status || 500; return err}

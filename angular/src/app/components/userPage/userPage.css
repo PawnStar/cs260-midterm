@@ -37,11 +37,11 @@ form input, form button {
   flex: 1;
 }
 
-.error {
+.success {
   width: 400px;
   padding: 20px;
   border-radius: 3px;
   margin: 20px auto;
-  background: #fcc;
-  border: solid 1px red;
+  background: rgb(204, 255, 215);
+  border: solid 1px green;
 }

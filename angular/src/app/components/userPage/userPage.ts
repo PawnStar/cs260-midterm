@@ -11,6 +11,7 @@ export class UserPage {
   loaded = false;
   products: Array<Product>;
   error = '';
+  message = '';
 
   ngOnInit(){
     this.updateProducts()
@@ -47,7 +48,24 @@ export class UserPage {
   }
 
   submitCart(event){
+    if(event) event.preventDefault();
 
+    const items = this.products.filter(p=>p.selected).map(p=>p._id)
+
+    fetch('/api/user/purchase', {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(items)
+    })
+      .then(res=>res.json())
+      .then(res=>this.checkError(res))
+      .then(()=>{
+        this.message = 'Success';
+        this.updateProducts()
+      })
+      .catch(console.error)
   }
 
   toggleProduct(event){
