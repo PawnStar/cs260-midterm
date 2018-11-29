@@ -6,8 +6,8 @@ import {RouterModule, Routes} from '@angular/router';
 
 
 import { AppComponent } from './app.component';
-import { UserPage } from './userPage/userPage';
-import { AdminPage } from './adminPage/adminPage';
+import { UserPage } from './components/userPage/userPage';
+import { AdminPage } from './components/adminPage/adminPage';
 
 const appRoutes: Routes = [
   {path: 'admin', component: AdminPage },

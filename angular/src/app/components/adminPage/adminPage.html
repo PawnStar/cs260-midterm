@@ -1,0 +1,50 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Product Image</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Amount ordered</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="products && products.length == 0">
+        <td colspan="5" style="text-align: center;">No products</td>
+      </tr>
+      <tr *ngFor="let product of products">
+        <td><img src="{{product.image}}"/></td>
+        <td>{{product.name}}</td>
+        <td>${{product.price}}</td>
+        <td>{{product.count}}</td>
+        <td><a href="#" [attr.data-target-id]="product._id" (click)="removeProduct($event)">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Add new product</h3>
+  <form (submit)="createProduct($event)">
+    <div>
+      <label for="name">Name: </label>
+      <input name="name" #name (keyup)="updateParam('p_name', name.value)">
+    </div>
+    
+    <div>
+      <label for="price">Price: </label>
+      <input name="price" #price (keyup)="updateParam('p_price', price.value)">
+    </div>
+    
+    <div>
+      <label for="image">Image: </label>
+      <input name="image" #image (keyup)="updateParam('p_image', image.value)">
+    </div>
+
+    <div>
+      <button type="Submit">Create Product</button>
+    </div>
+  </form>
+
+  <div class="error" *ngIf="error">
+    {{error}}
+  </div>
+</div>

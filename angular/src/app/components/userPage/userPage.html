@@ -1,0 +1,26 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Selected</th>
+        <th>Product Image</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="products && products.length == 0">
+        <td colspan="5" style="text-align: center;">No products</td>
+      </tr>
+      <tr *ngFor="let product of products">
+        <td>
+          <input *ngIf="product.selected" [attr.checked]="true" [attr.data-target-id]="product._id" type="checkbox" (click)="toggleProduct($event)"/>
+          <input *ngIf="!product.selected" [attr.data-checked]="product.selected" [attr.data-target-id]="product._id" type="checkbox" (click)="toggleProduct($event)"/>
+        </td>
+        <td><img src="{{product.image}}"/></td>
+        <td>{{product.name}}</td>
+        <td>${{product.price}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
