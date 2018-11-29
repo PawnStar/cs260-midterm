@@ -12,7 +12,7 @@ router.get('/', async (req, res)=>{
         items: item
       })
 
-      const numPerOrder = orders.map(order=>order.items.filter(it=>it._id === item._id).length)
+      const numPerOrder = orders.map(order=>order.items.filter(it=>it.id === item.id).length)
 
       let strippedItem = item.toObject();
       strippedItem.count = numPerOrder.reduce((a,b)=>(a+b), 0)
